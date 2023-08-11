@@ -1,0 +1,127 @@
+{
+    "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/$metadata#skillsets/$entity",
+    "@odata.etag": "\"0x8DB99128A91F47E\"",
+    "name": "library-skillset",
+    "description": "Skillset created from the portal. skillsetName: library-skillset; contentField: content; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Text.V3.EntityRecognitionSkill",
+        "name": "#1",
+        "description": null,
+        "context": "/document/content",
+        "categories": [
+          "Event",
+          "IPAddress",
+          "Address",
+          "PhoneNumber",
+          "Quantity",
+          "URL",
+          "Location",
+          "Person",
+          "Email",
+          "Product",
+          "DateTime",
+          "Skill",
+          "Organization",
+          "PersonType"
+        ],
+        "defaultLanguageCode": "en",
+        "minimumPrecision": null,
+        "modelVersion": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "persons",
+            "targetName": "people"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+        "name": "#2",
+        "description": null,
+        "context": "/document/content",
+        "defaultLanguageCode": "en",
+        "maxKeyPhraseCount": null,
+        "modelVersion": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "keyPhrases",
+            "targetName": "keyphrases"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.MergeSkill",
+        "name": "#3",
+        "description": null,
+        "context": "/document",
+        "insertPreTag": " ",
+        "insertPostTag": " ",
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content"
+          },
+          {
+            "name": "itemsToInsert",
+            "source": "/document/normalized_images/*/text"
+          },
+          {
+            "name": "offsets",
+            "source": "/document/normalized_images/*/contentOffset"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "mergedText",
+            "targetName": "merged_content"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Vision.OcrSkill",
+        "name": "#4",
+        "description": null,
+        "context": "/document/normalized_images/*",
+        "textExtractionAlgorithm": null,
+        "lineEnding": "Space",
+        "defaultLanguageCode": "en",
+        "detectOrientation": true,
+        "inputs": [
+          {
+            "name": "image",
+            "source": "/document/normalized_images/*"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "text",
+            "targetName": "text"
+          },
+          {
+            "name": "layoutText",
+            "targetName": "layoutText"
+          }
+        ]
+      }
+    ],
+    "cognitiveServices": {
+      "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+      "description": "/subscriptions/7023dccf-8c31-41db-809e-9f442490bfe7/resourceGroups/rg-udc-dev-eastus-01/providers/Microsoft.CognitiveServices/accounts/cognitive-udc-dev-eastus-01",
+      "key": "e0c23084e7d54cb880b5d4b26b770cb4"
+    },
+    "knowledgeStore": null,
+    "encryptionKey": null
+  }

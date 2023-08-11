@@ -1,0 +1,679 @@
+============1=============
+Search and Filter by Role and Duration
+Query string: search=AI&$filter=role eq 'business-user' and duration lt 11
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=AI&%24filter=role%20eq%20%27business-user%27%20and%20duration%20lt%2011
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 7.7610474,
+      "Timestamp": "2023-08-07T21:51:05.817Z",
+      "Key": "ms-learn13636881-10bb-406c-a7a0-4e77a1e37d5a",
+      "description": "Learn the basics of invoice processing in AI Builder and how it can benefit your organization.",
+      "duration": 10,
+      "instructor": null,
+      "level": "beginner",
+      "product": "ai-builder",
+      "rating_average": 4.81,
+      "rating_count": 21,
+      "role": "business-user",
+      "source": "MS Learn",
+      "title": "Get started with invoice processing in AI Builder",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-builder-invoice-processing/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "invoice processing",
+        "AI Builder",
+        "basics",
+        "organization"
+      ]
+    },
+    {
+      "@search.score": 4.9049244,
+      "Timestamp": "2023-08-07T21:51:05.818Z",
+      "Key": "ms-learn93b29362-94c3-48c7-ae58-ddd3c84e566b",
+      "description": "Learn the basics of invoice processing in AI Builder and how it can benefit your organization.",
+      "duration": 10,
+      "instructor": null,
+      "level": "beginner",
+      "product": "power-platform",
+      "rating_average": 4.81,
+      "rating_count": 21,
+      "role": "business-user",
+      "source": "MS Learn",
+      "title": "Get started with invoice processing in AI Builder",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-builder-invoice-processing/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "invoice processing",
+        "AI Builder",
+        "basics",
+        "organization"
+      ]
+    },
+    {
+      "@search.score": 4.9049244,
+      "Timestamp": "2023-08-07T21:51:05.817Z",
+      "Key": "ms-learneb6da14f-d124-4af4-93a2-6b220d17b481",
+      "description": "Learn the basics of invoice processing in AI Builder and how it can benefit your organization.",
+      "duration": 10,
+      "instructor": null,
+      "level": "beginner",
+      "product": "power-automate",
+      "rating_average": 4.81,
+      "rating_count": 21,
+      "role": "business-user",
+      "source": "MS Learn",
+      "title": "Get started with invoice processing in AI Builder",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-builder-invoice-processing/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "invoice processing",
+        "AI Builder",
+        "basics",
+        "organization"
+      ]
+    }
+  ]
+}
+
+================= 2 ================
+Search and Filter by Role and Duration, Select Key and Duration
+Query string: search=AI&$filter=role eq 'business-user' and duration lt 11&$select=Key,duration
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=AI&%24filter=role%20eq%20%27business-user%27%20and%20duration%20lt%2011&%24select=Key%2Cduration
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 7.7610474,
+      "Key": "ms-learn13636881-10bb-406c-a7a0-4e77a1e37d5a",
+      "duration": 10
+    },
+    {
+      "@search.score": 4.9049244,
+      "Key": "ms-learn93b29362-94c3-48c7-ae58-ddd3c84e566b",
+      "duration": 10
+    },
+    {
+      "@search.score": 4.9049244,
+      "Key": "ms-learneb6da14f-d124-4af4-93a2-6b220d17b481",
+      "duration": 10
+    }
+  ]
+}
+
+================ 3 ================
+Search and Filter with search in
+Query string: search=web service&$filter=search.in(role, 'maker|admin', '|')
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=web%20service&%24filter=search.in(role%2C%20%27maker%7Cadmin%27%2C%20%27%7C%27)
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 11.7251425,
+      "Timestamp": "2023-08-07T21:50:54.128Z",
+      "Key": "ms-learn8169d10f-f179-479b-abca-083aea642c5a",
+      "description": "Azure Pipelines help automate building, deploying, and maintaining your applications. While they support a wide range of platforms and programming languages, in this module you’ll focus on using them to implement ASP.NET apps on Azure App Service Web Apps with Azure SQL Database as their data store.",
+      "duration": 65,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "azure",
+      "rating_average": 4.85,
+      "rating_count": 13,
+      "role": "maker",
+      "source": "MS Learn",
+      "title": "Deploy ASP.NET web apps with Azure Pipelines",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/deploy-aspnet-apps-azure-app-service-pipelines/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Azure App Service Web Apps",
+        "ASP.NET apps",
+        "Azure SQL Database",
+        "Azure Pipelines",
+        "wide range",
+        "programming languages",
+        "data store",
+        "applications",
+        "platforms",
+        "module"
+      ]
+    }
+  ]
+}
+
+================ 4 ================
+Search and Filter with not search in
+Query string: search=web service&$filter=not search.in(role, 'maker|admin|intermediate|developer|devops-engineer|database-administrator|student|ai-engineer|administrator|functional-consultant|solution-architect', '|')
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=web%20service&%24filter=not%20search.in(role%2C%20%27maker%7Cadmin%7Cintermediate%7Cdeveloper%7Cdevops-engineer%7Cdatabase-administrator%7Cstudent%7Cai-engineer%7Cadministrator%7Cfunctional-consultant%7Csolution-architect%27%2C%20%27%7C%27)
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 9.707398,
+      "Timestamp": "2023-08-07T21:50:58.005Z",
+      "Key": "ms-learn90f26b90-378d-49f3-b22d-f681e38e76e7",
+      "description": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "duration": 18,
+      "instructor": null,
+      "level": "advanced",
+      "product": "azure",
+      "rating_average": 4.75,
+      "rating_count": 137,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/use-containers-language-understanding-intelligent-service-apps/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Language Understanding Intelligent Service",
+        "LUIS) Apps",
+        "containers"
+      ]
+    },
+    {
+      "@search.score": 9.707398,
+      "Timestamp": "2023-08-07T21:50:58.005Z",
+      "Key": "ms-learna72bbe5a-cb74-4cb7-a477-e8a3fc06c608",
+      "description": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "duration": 18,
+      "instructor": null,
+      "level": "advanced",
+      "product": "azure-cognitive-services",
+      "rating_average": 4.75,
+      "rating_count": 137,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/use-containers-language-understanding-intelligent-service-apps/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Language Understanding Intelligent Service",
+        "LUIS) Apps",
+        "containers"
+      ]
+    },
+    {
+      "@search.score": 9.707398,
+      "Timestamp": "2023-08-07T21:50:58.006Z",
+      "Key": "ms-learncdb546cc-adb3-4c45-8f73-2c98455e3379",
+      "description": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "duration": 18,
+      "instructor": null,
+      "level": "advanced",
+      "product": "azure-language-understanding",
+      "rating_average": 4.75,
+      "rating_count": 137,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/use-containers-language-understanding-intelligent-service-apps/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Language Understanding Intelligent Service",
+        "LUIS) Apps",
+        "containers"
+      ]
+    },
+    {
+      "@search.score": 8.156174,
+      "Timestamp": "2023-08-07T21:51:01.9Z",
+      "Key": "ms-learn258dc410-6940-418f-9310-b1a86234f20a",
+      "description": "Analyze images with the Computer Vision service",
+      "duration": 28,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-cognitive-services",
+      "rating_average": 4.73,
+      "rating_count": 1283,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Analyze images with the Computer Vision service",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/analyze-images-computer-vision/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Computer Vision service",
+        "images"
+      ]
+    },
+    {
+      "@search.score": 8.156174,
+      "Timestamp": "2023-08-07T21:50:59.326Z",
+      "Key": "ms-learnd108dbd4-d682-4c26-838c-6776ec39a0ef",
+      "description": "Read text with the Computer Vision service",
+      "duration": 24,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-cognitive-services",
+      "rating_average": 4.77,
+      "rating_count": 851,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Read text with the Computer Vision service",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Computer Vision service",
+        "text"
+      ]
+    },
+    {
+      "@search.score": 7.5703087,
+      "Timestamp": "2023-08-07T21:50:58.003Z",
+      "Key": "ms-learn2ba1d708-c867-4894-b64b-84f38c0d7a98",
+      "description": "Learn the necessary cultural changes for enterprise customer service to make AI transformation successful, and how they fit into a holistic AI strategy.",
+      "duration": 38,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "m365",
+      "rating_average": 4.77,
+      "rating_count": 578,
+      "role": "business-user",
+      "source": "MS Learn",
+      "title": "Discover how to foster an AI-ready culture in customer service",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/foster-ai-ready-culture-customer-service/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "necessary cultural changes",
+        "enterprise customer service",
+        "holistic AI strategy",
+        "AI transformation"
+      ]
+    },
+    {
+      "@search.score": 7.5703087,
+      "Timestamp": "2023-08-07T21:50:58.002Z",
+      "Key": "ms-learn3f9be0cf-87fe-4d53-8b35-41dd2d920f2f",
+      "description": "Learn the necessary cultural changes for enterprise customer service to make AI transformation successful, and how they fit into a holistic AI strategy.",
+      "duration": 38,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "azure",
+      "rating_average": 4.77,
+      "rating_count": 578,
+      "role": "business-user",
+      "source": "MS Learn",
+      "title": "Discover how to foster an AI-ready culture in customer service",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/foster-ai-ready-culture-customer-service/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "necessary cultural changes",
+        "enterprise customer service",
+        "holistic AI strategy",
+        "AI transformation"
+      ]
+    },
+    {
+      "@search.score": 7.5703087,
+      "Timestamp": "2023-08-07T21:50:58.002Z",
+      "Key": "ms-learn9ae6a5f3-f8b3-43d1-bd50-a69c9d7bc0d7",
+      "description": "Learn the necessary cultural changes for enterprise customer service to make AI transformation successful, and how they fit into a holistic AI strategy.",
+      "duration": 38,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "dynamics-365",
+      "rating_average": 4.77,
+      "rating_count": 578,
+      "role": "business-user",
+      "source": "MS Learn",
+      "title": "Discover how to foster an AI-ready culture in customer service",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/foster-ai-ready-culture-customer-service/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "necessary cultural changes",
+        "enterprise customer service",
+        "holistic AI strategy",
+        "AI transformation"
+      ]
+    },
+    {
+      "@search.score": 4.576073,
+      "Timestamp": "2023-08-07T21:51:03.168Z",
+      "Key": "ms-learn82acc791-a6be-4aeb-b2a4-b0491ce5aa7a",
+      "description": "Learn to manage LUIS apps through versioning, key management, handling data, and improving predictions.",
+      "duration": 24,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "azure-cognitive-services",
+      "rating_average": 4.77,
+      "rating_count": 106,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Manage your Language Understanding Intelligent Service (LUIS) Apps",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/manage-language-understanding-intelligent-service-apps/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "LUIS apps",
+        "key management",
+        "versioning",
+        "data",
+        "predictions"
+      ]
+    },
+    {
+      "@search.score": 4.576073,
+      "Timestamp": "2023-08-07T21:51:03.168Z",
+      "Key": "ms-learn896d4979-0be8-488a-88b7-ae254cde66d5",
+      "description": "Learn to manage LUIS apps through versioning, key management, handling data, and improving predictions.",
+      "duration": 24,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "azure-language-understanding",
+      "rating_average": 4.77,
+      "rating_count": 106,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Manage your Language Understanding Intelligent Service (LUIS) Apps",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/manage-language-understanding-intelligent-service-apps/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "LUIS apps",
+        "key management",
+        "versioning",
+        "data",
+        "predictions"
+      ]
+    },
+    {
+      "@search.score": 4.576073,
+      "Timestamp": "2023-08-07T21:51:03.167Z",
+      "Key": "ms-learnf5e9f49e-5c0f-4b29-a19d-ee06d43f8bf7",
+      "description": "Learn to manage LUIS apps through versioning, key management, handling data, and improving predictions.",
+      "duration": 24,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "azure",
+      "rating_average": 4.77,
+      "rating_count": 106,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Manage your Language Understanding Intelligent Service (LUIS) Apps",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/manage-language-understanding-intelligent-service-apps/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "LUIS apps",
+        "key management",
+        "versioning",
+        "data",
+        "predictions"
+      ]
+    },
+    {
+      "@search.score": 4.3448963,
+      "Timestamp": "2023-08-07T21:51:04.487Z",
+      "Key": "ms-learn4f2258ed-bb51-4d70-97a1-0d3c63f783a4",
+      "description": "Examine Azure's AI services, and choose the right one for your company. Prepare for AZ-900.",
+      "duration": 23,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-bot-service",
+      "rating_average": 4.78,
+      "rating_count": 7268,
+      "role": "business-owner",
+      "source": "MS Learn",
+      "title": "Choose the best AI service for your needs",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI services",
+        "right one",
+        "Azure",
+        "company"
+      ]
+    },
+    {
+      "@search.score": 4.3448963,
+      "Timestamp": "2023-08-07T21:51:04.489Z",
+      "Key": "ms-learnc8d0d6e2-968d-4f05-9f56-15293ea4a187",
+      "description": "Examine Azure's AI services, and choose the right one for your company. Prepare for AZ-900.",
+      "duration": 23,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-bot-service",
+      "rating_average": 4.78,
+      "rating_count": 7268,
+      "role": "technology-manager",
+      "source": "MS Learn",
+      "title": "Choose the best AI service for your needs",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI services",
+        "right one",
+        "Azure",
+        "company"
+      ]
+    },
+    {
+      "@search.score": 2.642341,
+      "Timestamp": "2023-08-07T21:51:00.629Z",
+      "Key": "ms-learn2eb64953-5f7a-4985-8632-314014c8a8c2",
+      "description": "Introduction to the Azure Machine Learning SDK",
+      "duration": 60,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-machine-learning",
+      "rating_average": 4.65,
+      "rating_count": 2869,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Introduction to the Azure Machine Learning SDK",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-machine-learning-service/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Azure Machine Learning SDK",
+        "Introduction"
+      ]
+    },
+    {
+      "@search.score": 2.642341,
+      "Timestamp": "2023-08-07T21:51:00.629Z",
+      "Key": "ms-learn6456b6d8-0af1-4dfd-b895-37ecfb3df42b",
+      "description": "Introduction to the Azure Machine Learning SDK",
+      "duration": 60,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure",
+      "rating_average": 4.65,
+      "rating_count": 2869,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Introduction to the Azure Machine Learning SDK",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-machine-learning-service/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Azure Machine Learning SDK",
+        "Introduction"
+      ]
+    },
+    {
+      "@search.score": 2.411164,
+      "Timestamp": "2023-08-07T21:51:01.902Z",
+      "Key": "ms-learncf9fbb13-4097-4c66-9cc9-582abfcc7298",
+      "description": "Get started with AI on Azure",
+      "duration": 34,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-bot-service",
+      "rating_average": 4.78,
+      "rating_count": 10997,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Get started with AI on Azure",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI",
+        "Azure"
+      ]
+    },
+    {
+      "@search.score": 1.9337323,
+      "Timestamp": "2023-08-07T21:51:04.488Z",
+      "Key": "ms-learn6c5f87ea-876f-4e0f-9fda-d8c4856327c0",
+      "description": "Examine Azure's AI services, and choose the right one for your company. Prepare for AZ-900.",
+      "duration": 23,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure",
+      "rating_average": 4.78,
+      "rating_count": 7268,
+      "role": "technology-manager",
+      "source": "MS Learn",
+      "title": "Choose the best AI service for your needs",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI services",
+        "right one",
+        "Azure",
+        "company"
+      ]
+    },
+    {
+      "@search.score": 1.9337323,
+      "Timestamp": "2023-08-07T21:51:04.489Z",
+      "Key": "ms-learn6d9f059f-bab6-4040-8c5b-4a9aa171a30a",
+      "description": "Examine Azure's AI services, and choose the right one for your company. Prepare for AZ-900.",
+      "duration": 23,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-machine-learning",
+      "rating_average": 4.78,
+      "rating_count": 7268,
+      "role": "technology-manager",
+      "source": "MS Learn",
+      "title": "Choose the best AI service for your needs",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI services",
+        "right one",
+        "Azure",
+        "company"
+      ]
+    },
+    {
+      "@search.score": 1.9337323,
+      "Timestamp": "2023-08-07T21:51:04.486Z",
+      "Key": "ms-learn7672fffe-620a-4749-a7ad-a183daa8a2e7",
+      "description": "Examine Azure's AI services, and choose the right one for your company. Prepare for AZ-900.",
+      "duration": 23,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure",
+      "rating_average": 4.78,
+      "rating_count": 7268,
+      "role": "business-owner",
+      "source": "MS Learn",
+      "title": "Choose the best AI service for your needs",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI services",
+        "right one",
+        "Azure",
+        "company"
+      ]
+    },
+    {
+      "@search.score": 1.9337323,
+      "Timestamp": "2023-08-07T21:51:04.487Z",
+      "Key": "ms-learn8eab6244-3da3-4055-aef9-0939bae8d5ee",
+      "description": "Examine Azure's AI services, and choose the right one for your company. Prepare for AZ-900.",
+      "duration": 23,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-machine-learning",
+      "rating_average": 4.78,
+      "rating_count": 7268,
+      "role": "business-owner",
+      "source": "MS Learn",
+      "title": "Choose the best AI service for your needs",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI services",
+        "right one",
+        "Azure",
+        "company"
+      ]
+    },
+    {
+      "@search.score": 1.9337323,
+      "Timestamp": "2023-08-07T21:51:04.489Z",
+      "Key": "ms-learnac33b6a3-8d9f-41fc-9c03-b8214e21763a",
+      "description": "Examine Azure's AI services, and choose the right one for your company. Prepare for AZ-900.",
+      "duration": 23,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-cognitive-services",
+      "rating_average": 4.78,
+      "rating_count": 7268,
+      "role": "technology-manager",
+      "source": "MS Learn",
+      "title": "Choose the best AI service for your needs",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI services",
+        "right one",
+        "Azure",
+        "company"
+      ]
+    },
+    {
+      "@search.score": 1.9337323,
+      "Timestamp": "2023-08-07T21:51:04.486Z",
+      "Key": "ms-learncd20465e-1e16-4d72-a95c-783c91349500",
+      "description": "Examine Azure's AI services, and choose the right one for your company. Prepare for AZ-900.",
+      "duration": 23,
+      "instructor": null,
+      "level": "beginner",
+      "product": "azure-cognitive-services",
+      "rating_average": 4.78,
+      "rating_count": 7268,
+      "role": "business-owner",
+      "source": "MS Learn",
+      "title": "Choose the best AI service for your needs",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-machine-learning-fundamentals/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "AI services",
+        "right one",
+        "Azure",
+        "company"
+      ]
+    }
+  ]
+}
+
+================ 5 ================
+Search and Filter with paging (skip and top)
+Query string: search=web service&$filter=search.in(role, 'data-scientist', '|') and duration lt 20&$skip=1&$top=2
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=web%20service&%24filter=search.in(role%2C%20%27data-scientist%27%2C%20%27%7C%27)%20and%20duration%20lt%2020&%24skip=1&%24top=2
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 9.707398,
+      "Timestamp": "2023-08-07T21:50:58.005Z",
+      "Key": "ms-learna72bbe5a-cb74-4cb7-a477-e8a3fc06c608",
+      "description": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "duration": 18,
+      "instructor": null,
+      "level": "advanced",
+      "product": "azure-cognitive-services",
+      "rating_average": 4.75,
+      "rating_count": 137,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/use-containers-language-understanding-intelligent-service-apps/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Language Understanding Intelligent Service",
+        "LUIS) Apps",
+        "containers"
+      ]
+    },
+    {
+      "@search.score": 9.707398,
+      "Timestamp": "2023-08-07T21:50:58.006Z",
+      "Key": "ms-learncdb546cc-adb3-4c45-8f73-2c98455e3379",
+      "description": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "duration": 18,
+      "instructor": null,
+      "level": "advanced",
+      "product": "azure-language-understanding",
+      "rating_average": 4.75,
+      "rating_count": 137,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "title": "Use containers for your Language Understanding Intelligent Service (LUIS) Apps",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/use-containers-language-understanding-intelligent-service-apps/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Language Understanding Intelligent Service",
+        "LUIS) Apps",
+        "containers"
+      ]
+    }
+  ]
+}

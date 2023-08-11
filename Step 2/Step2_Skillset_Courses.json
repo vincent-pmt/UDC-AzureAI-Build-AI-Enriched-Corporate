@@ -1,0 +1,36 @@
+{
+    "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/$metadata#skillsets/$entity",
+    "@odata.etag": "\"0x8DB990B8545F5B5\"",
+    "name": "courses-skillset",
+    "description": "Skillset created from the portal. skillsetName: courses-skillset; contentField: description; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+        "name": "#1",
+        "description": null,
+        "context": "/document/description",
+        "defaultLanguageCode": "en",
+        "maxKeyPhraseCount": null,
+        "modelVersion": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/description"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "keyPhrases",
+            "targetName": "keyphrases"
+          }
+        ]
+      }
+    ],
+    "cognitiveServices": {
+      "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+      "description": "/subscriptions/7023dccf-8c31-41db-809e-9f442490bfe7/resourceGroups/rg-udc-dev-eastus-01/providers/Microsoft.CognitiveServices/accounts/cognitive-udc-dev-eastus-01",
+      "key": "e0c23084e7d54cb880b5d4b26b770cb4"
+    },
+    "knowledgeStore": null,
+    "encryptionKey": null
+  }
