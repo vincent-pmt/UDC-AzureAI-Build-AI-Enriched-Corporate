@@ -1,0 +1,158 @@
+============1=============
+Search and Filter by Level and Duration
+Get Instructor description
+Query string: search=Eileen Diaz&$filter=level eq 'advanced' and duration lt 3
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=Eileen%20Diaz&%24filter=level%20eq%20%27advanced%27%20and%20duration%20lt%203
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 4.509354,
+      "Timestamp": "2023-08-07T21:51:06.153Z",
+      "Key": "company-moodle278d299e-ef0e-47fb-8e98-5a31a073519c",
+      "description": "For developers, learn our best practices for securely connecting to databases",
+      "duration": 2,
+      "instructor": "Eileen Diaz",
+      "level": "advanced",
+      "product": "SQL",
+      "rating_average": 4.8,
+      "rating_count": 115,
+      "role": "developer",
+      "source": "Company Moodle",
+      "title": "Security for database code",
+      "url": "https://www.example.com/course7",
+      "keyphrases": [
+        "best practices",
+        "developers",
+        "databases"
+      ],
+      "outputEntities": [
+        {
+          "name": "Eileen Diaz",
+          "description": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+        }
+      ]
+    }
+  ]
+}
+
+================= 2 ================
+Search and Filter by Role and Duration, Select Key and Duration
+Query string: search=Eileen Diaz&$filter=level eq 'advanced'&$select=Key,description,outputEntities
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=Eileen%20Diaz&%24filter=level%20eq%20%27advanced%27&%24select=Key%2Cdescription%2CoutputEntities
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 4.509354,
+      "Key": "company-moodle278d299e-ef0e-47fb-8e98-5a31a073519c",
+      "description": "For developers, learn our best practices for securely connecting to databases",
+      "outputEntities": [
+        {
+          "name": "Eileen Diaz",
+          "description": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+        }
+      ]
+    },
+    {
+      "@search.score": 4.509354,
+      "Key": "company-moodle85ee725b-4ae0-4719-8785-ddf99e19faf1",
+      "description": "For administrators, learn our best practices for securing all databases",
+      "outputEntities": [
+        {
+          "name": "Eileen Diaz",
+          "description": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+        }
+      ]
+    },
+    {
+      "@search.score": 4.509354,
+      "Key": "company-moodle9df844fd-eefe-4880-8341-936732174bb5",
+      "description": "Learn our policies for utilizing encryption including key management for projects",
+      "outputEntities": [
+        {
+          "name": "Eileen Diaz",
+          "description": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+        }
+      ]
+    }
+  ]
+}
+
+================ 3 ================
+Search Course Instructor and Filter with search in
+Query string: search=Eileen Diaz&$filter=search.in(role, 'maker|admin', '|')
+URL:https://search-udc-dev-eastus-01.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=Eileen%20Diaz&%24filter=search.in(role%2C%20%27maker%7Cadmin%27%2C%20%27%7C%27)
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 4.509354,
+      "Timestamp": "2023-08-07T21:51:06.153Z",
+      "Key": "company-moodle85ee725b-4ae0-4719-8785-ddf99e19faf1",
+      "description": "For administrators, learn our best practices for securing all databases",
+      "duration": 3,
+      "instructor": "Eileen Diaz",
+      "level": "advanced",
+      "product": "SQL",
+      "rating_average": 4.3,
+      "rating_count": 45,
+      "role": "admin",
+      "source": "Company Moodle",
+      "title": "Security for database admins",
+      "url": "https://www.example.com/course8",
+      "keyphrases": [
+        "best practices",
+        "administrators",
+        "databases"
+      ],
+      "outputEntities": [
+        {
+          "name": "Eileen Diaz",
+          "description": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+        }
+      ]
+    }
+  ]
+}
+
+================ 4 ================
+Search Library and Get publication info from SpringerLookup
+Query string: search=Springer&$select=publicationName,publicationDate,publisher,doi&$filter=publicationDate gt '2020-11-16'
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/paperlibrary-index/docs?api-version=2023-07-01-Preview&search=Springer&%24select=publicationName%2CpublicationDate%2Cpublisher%2Cdoi&%24filter=publicationDate%20gt%20%272020-11-16%27
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('paperlibrary-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 0.029852966,
+      "publicationName": "EURASIP Journal on Image and Video Processing",
+      "publisher": "Springer",
+      "doi": "10.1186/s13640-020-00545-z",
+      "publicationDate": "2021-01-14"
+    }
+  ]
+}
+
+================ 5 ================
+Search Library by PublicationName and Get publication info from SpringerLookup
+Query string: search=EURASIP Journal on Image and Video Processing&$filter=publicationDate gt '2020-11-16'&$select=metadata_title,metadata_author,publicationName,publicationDate,publisher,doi
+URL: https://search-udc-dev-eastus-01.search.windows.net/indexes/paperlibrary-index/docs?api-version=2023-07-01-Preview&search=EURASIP%20Journal%20on%20Image%20and%20Video%20Processing&%24filter=publicationDate%20gt%20%272020-11-16%27&%24select=metadata_title%2Cmetadata_author%2CpublicationName%2CpublicationDate%2Cpublisher%2Cdoi
+Results:
+{
+  "@odata.context": "https://search-udc-dev-eastus-01.search.windows.net/indexes('paperlibrary-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 37.554214,
+      "metadata_author": "Haoliang Cui",
+      "metadata_title": "A classification method for social information of sellers on social network",
+      "publicationName": "EURASIP Journal on Image and Video Processing",
+      "publisher": "Springer",
+      "doi": "10.1186/s13640-020-00545-z",
+      "publicationDate": "2021-01-14"
+    }
+  ]
+}
